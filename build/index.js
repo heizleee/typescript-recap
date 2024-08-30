@@ -1,0 +1,1 @@
+const sayHi = () => 'Hello';
