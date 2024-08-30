@@ -1,14 +1,14 @@
-import { init, exit } from 'myPackage';
-// error
-// Could not find a declaration file for module 'myPackage'. 
-// '/Users/haiin/Documents/projects/typescript-recap/src/myPackage.js' implicitly has an 'any' type.ts(7016)
-// js 파일인데 ts파일에서 참조할 타입들이 없어서 생기는 에러. myPackage.d.ts 파일 필요
+import { init, exit } from './myPackage';
+// tsconfig.json에 "jsAllow": true 를 설정하면 js파일을 불러올 수 있게 됨
+// All imports in import declaration are unused.ts(6192)
+// (alias) function init(config: any): boolean
+// 그냥 js파일을 불러왔을떄는 타입이 다 any로 추론됨
+//
+// if js 파일을 그대로 남기고 싶을때 but, 타입 안정성을 어느정도 추구하고 싶을떄는
+// => js 파일에 @ts-check를 추가해준다!
 
 init({
+  debug: true,
   url: '/'
-})
-
-exit(1)
-// (alias) exit(code: number): number
-// 위처럼 typescript에서 추적이 가능하게 됨 -> myPackage.d.ts파일로 가능하게 함
-// !!! module로 패키지를 가져와서 사용하고 싶은데 js 파일인 경우 적용됨
+});
+exit(1);
