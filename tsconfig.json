@@ -5,5 +5,13 @@
   "compilerOptions": {
     "outDir": "build",
     "target": "ES6",
+    "lib": [
+      // "lib"은 실행환경에 대해 설정해준다
+      // 브라우저에서 실행
+      "ES6",
+      // 브라우저 API를 사용할 수 있도록 추가
+      "DOM"
+    ],
+    "strict": true
   }
 }
