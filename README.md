@@ -33,3 +33,8 @@ export function init(config) {
 - class type
 - Encapsulation
 - Immutability
+
+## polymorphism
+### polymorphism.ts
+- Generic type을 이용한 parametric polymorphism(매개변수적 다형성)
+- 타입 안정성
